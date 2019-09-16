@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="beanTemplate" abstract="true">
+        <property name="message1" value="Hello World! Template"/>
+        <property name="message2" value="Hello Second World! Template"/>
+        <property name="message3" value="pizza Universe! Template"/>
+    </bean>
+
+    <bean id="helloUniverse" class="com.tutorials.beaninherit.HelloUniverseInherit">
+        <property name="message1" value="Hello Universe! Template"/>
+        <property name="message3" value="I love you Universe! Template"/>
+    </bean>
+</beans>
