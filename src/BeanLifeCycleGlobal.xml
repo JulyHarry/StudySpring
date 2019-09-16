@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-init-method="init"
+       default-destroy-method="destroy">
+    <bean id="globalMessage" class="com.tutorials.beanlifecycle.HelloWordLifeCycle">
+        <property name="message" value="Global Lifecycle Message."></property>
+    </bean>
+    <bean id="globalInformation" class="com.tutorials.beanlifecycle.HelloWordLifeCycle">
+        <property name="information" value="Global Lifecycle Information."></property>
+    </bean>
+    <bean id="globalAlert" class="com.tutorials.beanlifecycle.HelloWordLifeCycle" init-method="init2" destroy-method="destroy2">
+        <property name="alert" value="Global LifeCycle Alert"></property>
+    </bean>
+</beans>

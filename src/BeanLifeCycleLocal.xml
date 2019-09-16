@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="localMessage" class="com.tutorials.beanlifecycle.HelloWordLifeCycle" init-method="init" destroy-method="destroy">
+        <property name="message" value="Local LifeCycle Message."></property>
+    </bean>
+
+    <bean id="localInformation" class="com.tutorials.beanlifecycle.HelloWordLifeCycle" init-method="init3" destroy-method="destroy3">
+        <property name="information" value="Local LifeCycle Information."></property>
+    </bean>
+
+    <bean id="localAlert" class="com.tutorials.beanlifecycle.HelloWordLifeCycle" init-method="init2" destroy-method="destroy2">
+        <property name="alert" value="Local LifeCycle Alert"></property>
+    </bean>
+</beans>
