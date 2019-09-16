@@ -2,7 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="helloWorld" class="com.tutorials.beanscope.HelloWorldScope" scope="singleton">
-        <property name="message" value="This is a singleton example"></property>
+    <bean id="helloWorld" class="com.tutorials.beanscope.HelloWorldScope" scope="prototype">
+        <property name="message" value="This is a prototype example"></property>
     </bean>
 </beans>

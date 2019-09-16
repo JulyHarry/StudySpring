@@ -2,7 +2,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="helloWorld" class="com.tutorials.beanscope.HelloWorldScope" scope="singleton">
-        <property name="message" value="This is a singleton example"></property>
+    <bean id="worldid" name="worldname" class="com.tutorials.helloworld.HelloWorld">
+<!--        id/name 是唯一标识， 用来查找bean的位置，getBean()中填的就是id/name-->
+        <property name="message" value="Hi, the helloWordlnitialize."></property>
     </bean>
 </beans>
