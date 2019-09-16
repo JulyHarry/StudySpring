@@ -3,7 +3,7 @@ package com.tutorials.helloworld;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class HelloWorldMainApp {
+public class MainAppHelloWorld {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("BeanHelloWorld.xml");
         // getBean() 的String填的是Beans里的Bean的name/id
