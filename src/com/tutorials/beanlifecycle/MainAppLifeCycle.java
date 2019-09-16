@@ -50,16 +50,25 @@ public class MainAppLifeCycle {
 
         // 如果上述代码一起运行，则结果为：
         /*  Results:
-            Initialize beans!
-            Your Message is Local LifeCycle Message.
-            Your Message is Local LifeCycle Information.
-            Initialize beans!
-            Initialize beans!
-            Your Message is Global Lifecycle Message.
-            Your Message is Global Lifecycle Information.
-            Destroy beans!
-            Destroy beans!
-            Destroy beans!
+            Initialize bean!
+            Initialize one bean!
+            Initialize Local bean!
+            Your Message is: Local LifeCycle Message.
+            Your Information is: Local LifeCycle Information.
+            Your Alert is: Local LifeCycle Alert
+            ***********************************
+            Initialize bean!
+            Initialize bean!
+            Initialize Local bean!
+            Your Message is: Global Lifecycle Message.
+            Your Information is: Global Lifecycle Information.
+            Your Alert is: Global LifeCycle Alert
+            Destroy Local bean!
+            Destroy Local bean!
+            Destroy bean!
+            Destroy bean!
+            Destroy one bean!
+            Destroy bean!
          */
         // IMPORTANT: Bean的回收都是在程序最后一起进行回收，但是初始化时，相同的一个xml的Bean一起初始化，不同的xml的Bean不同时初始化。
 
@@ -72,6 +81,16 @@ public class MainAppLifeCycle {
         testRunOrderInformation.getInformation();
         testRunOrderMessage.setMessage("This is the last program.");
         testRunOrderMessage.getMessage(); // 输出在最后
-
+        /*  Results:
+            Initialize bean!
+            Initialize one bean!
+            Initialize Local bean!
+            Your Message is: Local LifeCycle Message.
+            Your Information is: Local LifeCycle Information.
+            Your Message is: This is the last program.
+            Destroy Local bean!
+            Destroy one bean!
+            Destroy bean!
+         */
     }
 }
