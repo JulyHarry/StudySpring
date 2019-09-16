@@ -4,6 +4,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="worldid" name="worldname" class="com.tutorials.helloworld.HelloWorld">
 <!--        id/name 是唯一标识， 用来查找bean的位置，getBean()中填的就是id/name-->
-        <property name="message" value="Hi, the helloWordlnitialize."></property>
+        <property name="message" value="Hi, the helloWordLifeCycle."></property>
     </bean>
 </beans>
