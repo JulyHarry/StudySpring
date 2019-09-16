@@ -1,6 +1,6 @@
 package com.tutorials.beanscope;
 
-public class HelloWorld {
+public class HelloWorldScope {
     private String message;
 
     public void getMessage() {
