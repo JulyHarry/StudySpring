@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.tutorials.beanDI.WorldDI" id="worldDI1">
+        <property name="message" value="world1"></property>
+    </bean>
+
+    <bean class="com.tutorials.beanDI.WorldDI" id="worldDI2">
+        <property name="message" value="world2"></property>
+    </bean>
+
+    <bean class="com.tutorials.beanDI.WorldDI" id="worldDI31">
+        <property name="message" value="world31"></property>
+    </bean>
+
+    <bean class="com.tutorials.beanDI.WorldDI" id="worldDI32">
+        <property name="message" value="world32"></property>
+    </bean>
+
+    <bean class="com.tutorials.beanDI.WorldDI" id="worldDI0">
+        <property name="message" value="world0"></property>
+    </bean>
+
+    <!-- 无参函数不需要bean里加入constructor-arg -->
+    <bean class="com.tutorials.beanDI.HelloWorldDI" id="helloWorldDI0">
+        <property name="worldDI" ref="worldDI0"></property>
+    </bean>
+
+    <bean class="com.tutorials.beanDI.HelloWorldDI" id="helloWorldDI1">
+        <!--声明构造函数的初始化使用constructor-arg-->
+        <constructor-arg ref="worldDI1"></constructor-arg>
+    </bean>
+
+    <bean class="com.tutorials.beanDI.HelloWorldDI" id="helloWorldDI2">
+        <!--构造函数含有多个参数，依次列出constructor-arg-->
+        <constructor-arg ref="worldDI2"></constructor-arg>
+        <constructor-arg type="int" value="2"></constructor-arg>
+        <property name="worldDI" ref="worldDI2"></property>
+        <property name="num" value="202"></property>
+    </bean>
+
+    <bean class="com.tutorials.beanDI.HelloWorldDI" id="helloWorldDI31">
+        <constructor-arg type="java.lang.String" value="String31 cs"></constructor-arg>
+        <constructor-arg type="int" value="31"></constructor-arg>
+        <constructor-arg ref="worldDI31"></constructor-arg>
+    </bean>
+
+    <bean class="com.tutorials.beanDI.HelloWorldDI" id="helloWorldDI32">
+        <!--构造函数重载时，可以使用index设置参数顺序-->
+        <constructor-arg type="java.lang.String" value="String32 cs" index="2"></constructor-arg>
+        <constructor-arg type="int" value="32" index="0"></constructor-arg>
+        <constructor-arg ref="worldDI32" index="1"></constructor-arg>
+    </bean>
+
+    <bean class="com.tutorials.beanDI.HelloWorldDI" id="create1">
+        <property name="worldDI" ref="worldDI1"></property>
+        <property name="num" value="505"></property>
+    </bean>
+
+    <!-- 使用 p:namespace,
+    格式为p:[name]="[value]" / p:[name]-ref="[ref]"-->
+    <bean class="com.tutorials.beanDI.HelloWorldDI" id="create2"
+          p:worldDI-ref="worldDI2"
+          p:num="606">
+    </bean>
+
+    <!-- 内部bean -->
+    <bean class="com.tutorials.beanDI.HelloWorldDI" id="create3">
+        <property name="num" value="707"></property>
+        <property name="worldDI">
+            <bean class="com.tutorials.beanDI.WorldDI" id="worldDI2">
+                <property name="message" value="This is an inner world."></property>
+            </bean>
+        </property>
+    </bean>
+
+</beans>

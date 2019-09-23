@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean class="com.tutorials.beancollections.HelloWorldCollections" id="helloWorldCollections">
+        <property name="list">
+            <list>
+                <value>A</value>
+                <value>B</value>
+                <value>C</value>
+                <value>C</value>
+            </list>
+        </property>
+
+        <property name="set">
+            <set>
+                <value>A</value>
+                <value>B</value>
+                <value>C</value>
+                <value>C</value>
+            </set>
+        </property>
+
+        <property name="map">
+            <map>
+                <entry key="1" value="A"></entry>
+                <entry key="2" value="B"></entry>
+                <entry key="3" value="C"></entry>
+            </map>
+        </property>
+
+        <property name="properties">
+            <props>
+                <prop key="one">A</prop>
+                <prop key="two">B</prop>
+                <prop key="three">C</prop>
+            </props>
+        </property>
+    </bean>
+
+
+
+</beans>
